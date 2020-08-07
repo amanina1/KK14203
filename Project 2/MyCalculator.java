@@ -9,7 +9,7 @@ public class MyCalculator extends Frame
    char op;
 
    String digitButtonText[] = {"7", "8", "9", "4", "5", "6", "1", "2", "3", "0", "+/-", "." };
-   String operatorButtonText[] = {"/", "sqrt", "*", "%", "-", "1/X", "+", "=" };
+   String operatorButtonText[] = {"/", "sqrt", "*", "%", "-", "+", "=" };
    String specialButtonText[] = {"Backspc", "C", "CE" };
 
    MyDigitButton digitButton[]=new MyDigitButton[digitButtonText.length];
@@ -167,15 +167,6 @@ class MyOperatorButton extends Button implements ActionListener
       cl.setClear=true;
       double temp=Double.parseDouble(cl.displayLabel.getText());
    
-      if(opText.equals("1/x"))
-      {
-         try
-         {double tempd=1/(double)temp;
-            cl.displayLabel.setText(MyCalculator.getFormattedText(tempd));}
-         catch(ArithmeticException excp)
-         {cl.displayLabel.setText("Divide by 0.");}
-         return;
-      }
       if(opText.equals("sqrt"))
       {
          try
